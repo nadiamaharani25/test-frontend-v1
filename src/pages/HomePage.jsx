@@ -1,8 +1,10 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import HeroImage from '../assets/img/hero.png'
 import { kelasTerbaru } from '../data/index.js'
+import { useNavigate } from 'react-router-dom'
 
 const HomePage = () => {
+  let navigate = useNavigate()
   return (
     <div className="homepage">
       <header className="w-100 min-vh-100 d-flex align-items-center">
@@ -50,8 +52,12 @@ const HomePage = () => {
                   </div>
                 </Col>
               );
-            })}
-            
+            })}      
+          </Row>
+          <Row>
+            <Col className='text-center'>
+              <button className='btn btn-success rounded-5 btn-lg' onClick={() => navigate('/kelas') }>Lihat Semua Kelas <i className='fa-solid fa-chevron-right ms-1'></i></button>
+            </Col>
           </Row>
         </Container>
       </div>
